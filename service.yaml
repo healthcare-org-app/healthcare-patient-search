@@ -1,0 +1,13 @@
+name: patient-search-service
+port: 8107
+lang: python
+description: "patient-search-service \u2014 domain: patients"
+http_deps:
+- patients-service
+- audit-log-service
+publishes:
+- audit.event
+subscribes:
+- patient.created
+- patient.updated
+- patient.merged
